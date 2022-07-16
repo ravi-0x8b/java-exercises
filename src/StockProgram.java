@@ -10,13 +10,16 @@ public class StockProgram {
         Product product = new Product();
 
         System.out.println("Enter product data:");
-        System.out.println("Name: ");
+        System.out.print("Name: ");
         product.name = sc.next();
-        System.out.println("Price: ");
+        System.out.print("Price: ");
         product.price = sc.nextDouble();
-        System.out.println("Quantity in Stock: ");
+        System.out.print("Quantity in Stock: ");
         product.quantity = sc.nextInt();
 
+        System.out.println(product.name);
+        System.out.println(product.price);
+        System.out.println(product.quantity);
         sc.close();
     }
 }
