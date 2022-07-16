@@ -1,7 +1,7 @@
 import java.util.Scanner;
 import entities.Triangle;
 
-public class Main {
+public class TriangleProgram {
     public static void main(String[] args) {
         Triangle x, y;
         x = new Triangle();
