@@ -1,4 +1,5 @@
 *.yml
 *.iml
+*.gitignore
 /out
 /.idea
