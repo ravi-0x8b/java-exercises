@@ -7,19 +7,19 @@ public class StockProgram {
         Locale.setDefault(Locale.US);
         Scanner sc = new Scanner(System.in);
 
-        Product product = new Product();
-
         System.out.println("Enter product data:");
         System.out.print("Name: ");
-        product.name = sc.next();
+        String name = sc.next();
         System.out.print("Price: ");
-        product.price = sc.nextDouble();
+        double price = sc.nextDouble();
         System.out.print("Quantity in Stock: ");
-        product.quantity = sc.nextInt();
+        int quantity = sc.nextInt();
 
-        System.out.println(product.name);
-        System.out.println(product.price);
-        System.out.println(product.quantity);
+        Product product = new Product(name, price, quantity);
+
+        System.out.println(product.getName());
+        System.out.println(product);
+        System.out.println(product);
         sc.close();
     }
 }
