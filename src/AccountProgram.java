@@ -1,11 +1,12 @@
 import java.util.Locale;
 import java.util.Scanner;
-import entities.Bank;
+import entities.Account;
 
-public class BankProgram {
+public class AccountProgram {
     public static void main(String[] args) {
         Locale.setDefault(Locale.US);
         Scanner scanner = new Scanner(System.in);
+        Account account;
 
         System.out.print("Enter account number: ");
         int accNumber = scanner.nextInt();
@@ -13,27 +14,32 @@ public class BankProgram {
         String holder = scanner.nextLine();
         scanner.nextLine();
         System.out.print("Is there an initial deposit (y/n)?");
-        char confirm = scanner.nextLine().charAt(0);
-        Bank bank = new Bank(accNumber, holder);
-        if (confirm == 'Y' || confirm == 'y') {
+        char response = scanner.nextLine().charAt(0);
+
+        if (response == 'y') {
             System.out.print("Enter initial deposit value: ");
             double amount = scanner.nextDouble();
-            bank.DepositAmount(amount);
+            account = new Account(accNumber, holder, amount);
         }
-        System.out.print("Account data: ");
-        System.out.println(bank.toString());
+        else {
+            account = new Account(accNumber, holder);
+        }
+
+        System.out.println();
+        System.out.println("Account data:");
+        System.out.println(account.toString());
         System.out.print("Enter a deposit value: ");
         double deposit = scanner.nextDouble();
-        bank.DepositAmount(deposit);
+        account.DepositAmount(deposit);
 
         System.out.println("Updated account data: ");
-        System.out.println(bank.toString());
+        System.out.println(account.toString());
 
         System.out.print("Enter a withdraw value: ");
         double withdraw = scanner.nextDouble();
-        bank.WithdrawAmount(withdraw);
+        account.WithdrawAmount(withdraw);
         System.out.println("Updated account data: ");
-        System.out.println(bank.toString());
+        System.out.println(account.toString());
 
         scanner.close();
     }

@@ -1,15 +1,19 @@
 package entities;
 
-public class Bank {
+public class Account {
     private final int AccountNumber;
     private String Holder;
     private double Balance;
 
-    public Bank(int AccountNumber, String Holder) {
+    public Account(int AccountNumber, String Holder) {
         this.AccountNumber = AccountNumber;
         this.Holder = Holder;
     }
-
+    public Account(int AccountNumber, String Holder, double initialDeposit) {
+        this.AccountNumber = AccountNumber;
+        this.Holder = Holder;
+        DepositAmount(initialDeposit);
+    }
     public double getBalance() {
         return Balance;
     }
