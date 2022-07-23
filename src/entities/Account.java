@@ -33,7 +33,6 @@ public class Account {
     public void WithdrawAmount(double amount) {
         Balance -= amount + 5.0;
     }
-
     public String toString() {
         return "Account: " + getAccountNumber()
                 + ", Holder: " + getHolder()
